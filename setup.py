@@ -8,7 +8,7 @@ try:
 except (IOError, ImportError):
     with open('README.md', 'rb') as f:
         description = f.read()
-
+    description = str(description.decode('utf-8'))
 
 setup(
     name='djangocms-css-background',

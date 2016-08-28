@@ -1,13 +1,17 @@
+import time
+from random import randint
+
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
-from random import randint
-import time
-import models
+from django.utils.translation import ugettext_lazy as _
+
+from . import models
 
 
 class CssBackgroundPlugIn(CMSPluginBase):
     model = models.CssBackground
-    name = 'CSS Background'
+    name = _('CSS Background')
+    admin_preview = False
     render_template = 'css_background.html'
     raw_id_fields = ('image',)
     fieldsets = (

@@ -21,6 +21,12 @@ class CssBackground(CMSPlugin):
     b = models.IntegerField(default=0)
     a = models.IntegerField(default=0)
 
+    cmsplugin_ptr = models.OneToOneField(
+        CMSPlugin,
+        related_name='djangocms_css_background_cmsplugin_ptr+',
+        parent_link=True
+    )
+
     class Meta:
         verbose_name = "css background"
 
